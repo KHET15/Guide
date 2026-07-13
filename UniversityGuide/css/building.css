@@ -1,0 +1,199 @@
+/* ==========================================================
+   building.css
+   สไตล์เฉพาะสำหรับหน้ารายละเอียดอาคาร (building.html)
+   ครอบคลุมรูปภาพหลัก, กล่องข้อมูล และแผนที่
+   ========================================================== */
+
+/* ----------------------------------------------------------
+   ส่วนหัวรายละเอียดอาคาร (Hero ของหน้า Building)
+   ---------------------------------------------------------- */
+.building-hero {
+    background-color: var(--white);
+    padding: 40px 0 0;
+}
+
+/* ปุ่มย้อนกลับไปหน้าแรก */
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--primary);
+    font-weight: 600;
+    font-size: 14.5px;
+    margin-bottom: 24px;
+    transition: gap var(--transition-fast);
+}
+
+.back-link:hover {
+    gap: 10px;
+}
+
+/* รูปภาพขนาดใหญ่ของอาคาร */
+.building-hero-image-wrapper {
+    width: 100%;
+    height: 380px;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    background-color: var(--sky);
+}
+
+.building-hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ชื่ออาคาร */
+.building-hero-name {
+    font-size: 34px;
+    font-weight: 800;
+    color: var(--secondary);
+    margin-top: 28px;
+}
+
+.building-hero-subtitle {
+    font-size: 15px;
+    color: var(--text-light);
+    margin-top: 6px;
+}
+
+/* ----------------------------------------------------------
+   ส่วนกล่องข้อมูล (Information Boxes)
+   Box 1: สิ่งอำนวยความสะดวก / Box 2: จำนวนชั้น
+   ---------------------------------------------------------- */
+.building-info-section {
+    padding: 40px 0;
+}
+
+.info-boxes-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 24px;
+}
+
+.info-box {
+    background-color: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 28px 30px;
+    box-shadow: var(--shadow-sm);
+}
+
+.info-box-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.info-box-icon {
+    font-size: 22px;
+}
+
+.info-box-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--secondary);
+}
+
+/* Box 1: รายการสิ่งอำนวยความสะดวกทั้งหมด */
+.facilities-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.facilities-list .facility-tag {
+    font-size: 14px;
+    padding: 8px 16px;
+}
+
+/* Box 2: จำนวนชั้นของอาคาร แสดงเป็นตัวเลขเด่น */
+.floor-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.floor-count {
+    font-size: 56px;
+    font-weight: 800;
+    color: var(--primary);
+    line-height: 1;
+    margin-bottom: 8px;
+}
+
+.floor-label {
+    font-size: 14px;
+    color: var(--text-light);
+}
+
+/* ----------------------------------------------------------
+   ส่วนแผนที่ขนาดใหญ่ (Large Map Image)
+   ---------------------------------------------------------- */
+.building-map-section {
+    padding: 10px 0 70px;
+}
+
+.map-box {
+    background-color: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 24px;
+    box-shadow: var(--shadow-sm);
+}
+
+.map-box-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--secondary);
+    margin-bottom: 18px;
+}
+
+.building-map-image {
+    width: 100%;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border);
+    background-color: var(--background);
+}
+
+/* กรณีไม่พบข้อมูลอาคาร (เช่น id ไม่ถูกต้อง) */
+.building-not-found {
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.building-not-found h2 {
+    font-size: 24px;
+    color: var(--secondary);
+    margin-bottom: 12px;
+}
+
+.building-not-found p {
+    color: var(--text-light);
+    margin-bottom: 24px;
+}
+
+/* ----------------------------------------------------------
+   Responsive: ปรับ Layout สำหรับจอขนาดกลางและเล็ก
+   ---------------------------------------------------------- */
+@media (max-width: 768px) {
+    .building-hero-image-wrapper {
+        height: 240px;
+    }
+
+    .building-hero-name {
+        font-size: 26px;
+    }
+
+    .info-boxes-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .floor-box {
+        padding: 10px 0;
+    }
+}
