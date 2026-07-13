@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ระบบแนะนำอาคารมหาวิทยาลัย</title>
+
+    <!-- เชื่อมต่อไฟล์ CSS หลักและ CSS เฉพาะหน้าแรก -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/home.css">
+</head>
+<body>
+
+    <!-- ==========================================================
+         Header และ Navigation
+         ========================================================== -->
+    <header class="site-header">
+        <div class="header-container">
+            <div class="logo">
+                <span class="logo-icon">🏫</span>
+                <span>University<span class="logo-accent">Guide</span></span>
+            </div>
+
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link active">หน้าแรก</a></li>
+                    <li><a href="building.html" class="nav-link">รายละเอียดอาคาร</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- ==========================================================
+             Section 1: ระบบค้นหาอาคาร (Hero Search)
+             ========================================================== -->
+        <section class="hero-search">
+            <div class="section-container">
+                <h1 class="hero-title">ค้นหาอาคารภายในมหาวิทยาลัย</h1>
+                <p class="hero-subtitle">
+                    ค้นหาอาคารจากชื่ออาคาร หรือสิ่งอำนวยความสะดวกที่คุณต้องการ
+                    เพื่อดูรายละเอียด แผนที่ และข้อมูลภายในอาคารได้อย่างรวดเร็ว
+                </p>
+
+                <div class="search-box">
+                    <span class="search-icon">🔍</span>
+                    <input
+                        type="text"
+                        id="search-input"
+                        class="search-input"
+                        placeholder="ค้นหาชื่ออาคาร หรือสิ่งอำนวยความสะดวก เช่น ห้องน้ำ, ATM, ร้านกาแฟ"
+                    >
+                    <button type="button" id="search-button" class="search-button">ค้นหา</button>
+                </div>
+
+                <!-- พื้นที่แสดงผลลัพธ์การค้นหา (จัดการโดย search.js) -->
+                <div id="search-results-grid" class="search-results-grid"></div>
+            </div>
+        </section>
+
+        <!-- ==========================================================
+             Section 2: อาคารแนะนำ (Recommendation Section 1)
+             ========================================================== -->
+        <section class="recommend-section">
+            <div class="section-container">
+                <div class="section-heading">
+                    <h2 class="section-title">อาคารแนะนำสำหรับคุณ</h2>
+                    <p class="section-desc">อาคารที่ได้รับความนิยมและถูกค้นหามากที่สุดในขณะนี้</p>
+                </div>
+
+                <!-- การ์ดแนะนำ (จัดการโดย home.js) -->
+                <div class="recommend-card-wrapper">
+                    <div id="recommend-card-1"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================================
+             Section 3: อาคารแนะนำ (Recommendation Section 2)
+             ========================================================== -->
+        <section class="recommend-section recommend-section-alt">
+            <div class="section-container">
+                <div class="section-heading">
+                    <h2 class="section-title">อาคารแนะนำเพิ่มเติม</h2>
+                    <p class="section-desc">อาคารยอดนิยมอีกหนึ่งหลังที่คุณไม่ควรพลาด</p>
+                </div>
+
+                <!-- การ์ดแนะนำ (จัดการโดย home.js) -->
+                <div class="recommend-card-wrapper">
+                    <div id="recommend-card-2"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================================
+             Section 4: Building Slider
+             ========================================================== -->
+        <section class="slider-section">
+            <div class="section-container">
+                <div class="section-heading">
+                    <h2 class="section-title">อาคารทั้งหมดในมหาวิทยาลัย</h2>
+                    <p class="section-desc">เลื่อนดูอาคารทั้งหมดภายในมหาวิทยาลัยของเรา</p>
+                </div>
+
+                <div class="slider-wrapper">
+                    <button type="button" id="slider-prev-btn" class="slider-nav-btn" aria-label="หน้าก่อนหน้า">‹</button>
+
+                    <div class="slider-track-container">
+                        <!-- การ์ดอาคารของ Slider (จัดการโดย slider.js) -->
+                        <div id="slider-track" class="slider-track"></div>
+                    </div>
+
+                    <button type="button" id="slider-next-btn" class="slider-nav-btn" aria-label="หน้าถัดไป">›</button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ==========================================================
+         Footer
+         ========================================================== -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <p>&copy; 2026 University Building Recommendation Website. สงวนลิขสิทธิ์ทุกประการ</p>
+        </div>
+    </footer>
+
+    <!-- เชื่อมต่อไฟล์ Mock Data -->
+    <script src="data/mockData.js"></script>
+
+    <!-- เชื่อมต่อไฟล์ JavaScript (ต้องโหลด home.js ก่อน เนื่องจากไฟล์อื่นเรียกใช้ฟังก์ชันร่วมจากไฟล์นี้) -->
+    <script src="js/home.js"></script>
+    <script src="js/search.js"></script>
+    <script src="js/slider.js"></script>
+</body>
+</html>

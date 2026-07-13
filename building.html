@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>รายละเอียดอาคาร | University Building Recommendation Website</title>
+
+    <!-- เชื่อมต่อไฟล์ CSS หลักและ CSS เฉพาะหน้ารายละเอียดอาคาร -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/building.css">
+</head>
+<body>
+
+    <!-- ==========================================================
+         Header และ Navigation
+         ========================================================== -->
+    <header class="site-header">
+        <div class="header-container">
+            <div class="logo">
+                <span class="logo-icon">🏫</span>
+                <span>University<span class="logo-accent">Guide</span></span>
+            </div>
+
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">หน้าแรก</a></li>
+                    <li><a href="building.html" class="nav-link active">รายละเอียดอาคาร</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- เนื้อหารายละเอียดอาคารทั้งหมด (ควบคุมการแสดง/ซ่อนโดย building.js) -->
+        <div id="building-detail-content">
+
+            <!-- ==========================================================
+                 Building Hero: รูปภาพหลักและชื่ออาคาร
+                 ========================================================== -->
+            <section class="building-hero">
+                <div class="section-container">
+                    <a href="index.html" class="back-link">← กลับหน้าแรก</a>
+
+                    <div class="building-hero-image-wrapper">
+                        <img
+                            id="building-hero-image"
+                            class="building-hero-image"
+                            src=""
+                            alt="รูปภาพอาคาร"
+                        >
+                    </div>
+
+                    <h1 id="building-hero-name" class="building-hero-name"></h1>
+                    <p id="building-hero-subtitle" class="building-hero-subtitle"></p>
+                </div>
+            </section>
+
+            <!-- ==========================================================
+                 Information Boxes: สิ่งอำนวยความสะดวก / จำนวนชั้น
+                 ========================================================== -->
+            <section class="building-info-section">
+                <div class="section-container">
+                    <div class="info-boxes-grid">
+
+                        <!-- Box 1: สิ่งอำนวยความสะดวก -->
+                        <div class="info-box">
+                            <div class="info-box-header">
+                                <span class="info-box-icon">🛎️</span>
+                                <h2 class="info-box-title">สิ่งอำนวยความสะดวก</h2>
+                            </div>
+                            <div id="facilities-list" class="facilities-list"></div>
+                        </div>
+
+                        <!-- Box 2: จำนวนชั้น -->
+                        <div class="info-box floor-box">
+                            <div class="info-box-header">
+                                <span class="info-box-icon">🏢</span>
+                                <h2 class="info-box-title">จำนวนชั้น</h2>
+                            </div>
+                            <p id="floor-count" class="floor-count"></p>
+                            <p class="floor-label">ชั้น</p>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <!-- ==========================================================
+                 Map Section: แผนที่ขนาดใหญ่ของอาคาร
+                 ========================================================== -->
+            <section class="building-map-section">
+                <div class="section-container">
+                    <div class="map-box">
+                        <h2 class="map-box-title">แผนที่อาคาร</h2>
+                        <img
+                            id="building-map-image"
+                            class="building-map-image"
+                            src=""
+                            alt="แผนที่อาคาร"
+                        >
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+        <!-- ==========================================================
+             ข้อความแจ้งเตือนเมื่อไม่พบอาคาร (ซ่อนโดยค่าเริ่มต้น)
+             ========================================================== -->
+        <div id="building-not-found" class="building-not-found" style="display: none;">
+            <div class="section-container">
+                <h2>ไม่พบข้อมูลอาคารที่คุณต้องการ</h2>
+                <p>อาคารที่คุณค้นหาอาจถูกลบ หรือลิงก์ไม่ถูกต้อง</p>
+                <a href="index.html" class="btn-primary">กลับหน้าแรก</a>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- ==========================================================
+         Footer
+         ========================================================== -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <p>&copy; 2026 University Building Recommendation Website. สงวนลิขสิทธิ์ทุกประการ</p>
+        </div>
+    </footer>
+
+    <!-- เชื่อมต่อไฟล์ Mock Data -->
+    <script src="data/mockData.js"></script>
+
+    <!-- เชื่อมต่อไฟล์ JavaScript (ต้องโหลด home.js ก่อน เนื่องจาก building.js เรียกใช้ escapeHtml ร่วมกัน) -->
+    <script src="js/home.js"></script>
+    <script src="js/building.js"></script>
+</body>
+</html>
